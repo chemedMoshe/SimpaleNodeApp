@@ -1,6 +1,8 @@
 var express = require('express');
+var cors = require('cors');
 var mongoose = require('mongoose');
 var app = express();
+app.use(cors())
 
 // Connect to MongoDB
 mongoose.connect('mongodb://mongo-db:27017/animals')
@@ -22,6 +24,7 @@ app.get('/add-dog', async function (req, res) {
     await dog.save();
     res.send('Dog added successfully!');
   } catch (err) {
+    console.log(err);
     res.status(500).send('Error adding dog');
   }
 });
