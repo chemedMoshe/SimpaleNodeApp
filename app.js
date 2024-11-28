@@ -5,7 +5,7 @@ var app = express();
 app.use(cors())
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:3030/animals')
+mongoose.connect('mongodb://mongo-db:27017/animals')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
