@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/animals')
+mongoose.connect('mongodb://mongo-db:27017/animals')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
